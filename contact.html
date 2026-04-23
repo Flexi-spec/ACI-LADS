@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Contact | ACI LADS</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="assets/logo.png"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+  <nav>
+    <div class="brand">
+      <img src="assets/logo.png" alt="ACI LADS" class="navbar-logo"/>
+      ACI LADS
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="excos.html">Excos</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="navbar-btn btn-glow" onclick="location.href='contact.html'">Get Involved</button>
+    <div class="hamburger" tabindex="0" aria-label="Open Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <main>
+    <div class="contact-container">
+      <h1 class="section-title" data-aos="zoom-in-down">Connect With Us</h1>
+      <div class="contact-form" data-aos="fade-up">
+        <form autocomplete="off">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" required type="text" placeholder="Your Name"/>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" required type="email" placeholder="Your Email"/>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" required rows="4" placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="btn-glow">Send Message</button>
+        </form>
+        <div class="social-icons" data-aos="flip-left">
+          <a href="https://instagram.com/acilads" target="_blank" class="social-icon" aria-label="Instagram"><!-- Instagram SVG --><svg width="24" height="24" fill="none" stroke="#001F3F" stroke-width="2.2" viewBox="0 0 24 24"><rect x="2.7" y="2.7" width="18.6" height="18.6" rx="6" fill="none"/><circle cx="12" cy="12" r="5"/><circle cx="17.2" cy="6.8" r="1.2"/></svg></a>
+          <a href="https://wa.me/2349000000000" target="_blank" class="social-icon" aria-label="WhatsApp"><!-- WhatsApp SVG --><svg width="25" height="25" stroke="#001F3F" fill="none" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-16.2 7.1l-1.3 4.1 4.2-1.2A9 9 0 1 0 21 12Z"/><path d="M16.1 14.2c-.3-.2-1.9-.9-2.2-1a1 1 0 0 0-.8.1c-.2.2-.8 1-1 1.2s-.3.3-.7.1c-.4-.2-1.6-.6-3-1.8-1.1-.9-1.8-2-2-2.3-.2-.4 0-.6.1-.8.1-.2.2-.5.3-.6.1-.2.1-.4.2-.6 0-.2 0-.5-.1-.7-.2-.3-1-2.5-1.4-3.3-.2-.4-.5-.4-.7-.3a6.96 6.96 0 0 0-3 7.9c0 5.1 4.2 9.3 9.3 9.3 2.5 0 4.8-1 6.5-2.6a6.96 6.96 0 0 0 2.2-6.1c-.1 0-.3 0-.7.1s-.4.2-.6.5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

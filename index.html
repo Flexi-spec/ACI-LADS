@@ -1,240 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ACI LADS — Literary & Debating Society | Ambassadors College, Ile-Ife</title>
-  <meta name="description" content="The Literary and Debating Society of Ambassadors College, Ile-Ife. Excellence in Speech, Brilliance in Writing." />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>ACI LADS | Literary & Debating Society - Ambassadors College Ile-Ife</title>
+  <meta name="description" content="Royal Literary excellence. Discover the Literary and Debating Society of Ambassadors College Ile-Ife.">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="assets/logo.png"/>
+  <!-- AOS.js CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
 </head>
 <body>
-
-  <!-- Nav injected by JS -->
-  <div id="nav-mount"></div>
-
-  <!-- ══════════════════════════════
-       HERO SECTION
-  ══════════════════════════════ -->
-  <section class="hero" id="home">
-    <div class="hero-bg">
-      <div class="hero-overlay"></div>
-      <div class="hero-particles" id="heroParticles"></div>
+  <nav>
+    <div class="brand">
+      <img src="assets/logo.png" alt="ACI LADS" class="navbar-logo"/>
+      ACI LADS
     </div>
-
-    <div class="hero-content container">
-      <div class="ornament" data-aos="fade-down" data-aos-duration="600">
-        <span>⚜</span>
-      </div>
-
-      <p class="hero-eyebrow" data-aos="fade-up" data-aos-delay="100">
-        Ambassadors College, Ile-Ife
-      </p>
-
-      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
-        <span class="hero-title-line">ACI</span>
-        <span class="hero-title-line gold-text">LADS</span>
-      </h1>
-
-      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
-        Literary &amp; Debating Society
-      </p>
-
-      <div class="hero-motto" data-aos="fade-up" data-aos-delay="400">
-        <span id="typewriter-text"></span><span class="cursor">|</span>
-      </div>
-
-      <div class="hero-cta" data-aos="fade-up" data-aos-delay="550">
-        <a href="about.html" class="btn btn-gold">Explore Our Legacy</a>
-        <a href="articles.html" class="btn btn-outline">Read Publications</a>
-      </div>
-
-      <div class="hero-stats" data-aos="fade-up" data-aos-delay="700">
-        <div class="hero-stat">
-          <span class="hero-stat-num">10+</span>
-          <span class="hero-stat-label">Years of Excellence</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">50+</span>
-          <span class="hero-stat-label">Competitions Won</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">200+</span>
-          <span class="hero-stat-label">Members Trained</span>
-        </div>
-      </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="excos.html">Excos</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="navbar-btn btn-glow" onclick="location.href='contact.html'">Get Involved</button>
+    <div class="hamburger" tabindex="0" aria-label="Open Menu">
+      <span></span><span></span><span></span>
     </div>
-
-    <a href="#about-preview" class="hero-scroll-indicator">
-      <span class="scroll-dot"></span>
-      <span>Scroll</span>
-    </a>
-  </section>
-
-  <!-- ══════════════════════════════
-       ABOUT PREVIEW
-  ══════════════════════════════ -->
-  <section class="about-preview" id="about-preview">
-    <div class="container">
-      <div class="about-preview-grid">
-        <div class="about-preview-text" data-aos="fade-right">
-          <span class="section-label">Our Story</span>
-          <h2>Shaping Voices, <br/><em class="gold-text">Crafting Leaders</em></h2>
-          <p>Founded within the hallowed halls of Ambassadors College, ACI LADS has stood as the premier platform for literary excellence and oratory mastery. We transform students into eloquent speakers, critical thinkers, and brilliant writers.</p>
-          <p>Through debate tournaments, essay competitions, and literary workshops, our society has consistently produced voices that resonate far beyond the classroom.</p>
-          <a href="about.html" class="btn btn-outline" style="margin-top: 24px;">Discover Our Legacy →</a>
+  </nav>
+  <main>
+    <section class="hero center">
+      <div class="hero-content">
+        <img src="assets/logo.png" alt="ACI LADS Logo" width="110" height="110" style="border-radius:50%;border:4px solid #D4AF37; box-shadow:0 0 16px #D4AF3780;" data-aos="fade-down"/>
+        <h1 class="motto-type motto text-shadow" aria-label="Excellence in Speech, Brilliance in Writing."></h1>
+        <a href="#gateway-main" class="enter-btn btn-glow" style="margin-top:2.3rem;" data-aos="zoom-in">Enter</a>
+        <div style="margin-top:2.3rem;">
+          <span class="gold-txt" style="font-weight:600;font-size:1.13rem;">"Royal Literary Society of Leaders"</span>
         </div>
-
-        <div class="about-preview-visual" data-aos="fade-left" data-aos-delay="150">
-          <div class="visual-card vc-1">
-            <div class="visual-card-inner">
-              <span class="vc-icon">📜</span>
-              <h4>Literary Excellence</h4>
-              <p>Essays, poetry & creative writing</p>
-            </div>
+      </div>
+      <a id="gateway-main"></a>
+    </section>
+    <!-- Optionally, quick cards/summary below hero -->
+    <section style="margin-top:1.5rem;">
+      <div class="feed-grid">
+        <div class="article-card" data-aos="fade-right">
+          <img src="assets/legacy.jpg" alt="Legacy" class="article-img"/>
+          <div class="article-meta">
+            <div class="article-cat">Heritage</div>
+            <h3 class="article-title">Discover Our Legacy</h3>
+            <div class="article-desc">Since inception, ACI LADS has fostered royal speech and literary brilliance. Learn about our origins, our motto, and our society values.</div>
+            <a href="about.html" class="read-more-link btn-glow">About Us</a>
           </div>
-          <div class="visual-card vc-2">
-            <div class="visual-card-inner">
-              <span class="vc-icon">🎤</span>
-              <h4>Debate Mastery</h4>
-              <p>Oratory, argumentation & rhetoric</p>
-            </div>
+        </div>
+        <div class="article-card" data-aos="flip-left">
+          <img src="assets/excos.jpg" alt="Excos" class="article-img"/>
+          <div class="article-meta">
+            <div class="article-cat">Leadership</div>
+            <h3 class="article-title">Meet The Excos</h3>
+            <div class="article-desc">Our Hall of Fame shines with outstanding leaders, past and present. Explore each set of excos and read their stories and achievements.</div>
+            <a href="excos.html" class="read-more-link btn-glow">The Board</a>
           </div>
-          <div class="visual-card vc-3">
-            <div class="visual-card-inner">
-              <span class="vc-icon">🏆</span>
-              <h4>Championship Track</h4>
-              <p>State, national & international wins</p>
-            </div>
+        </div>
+        <div class="article-card" data-aos="fade-left">
+          <img src="assets/trophy.jpg" alt="Achievements" class="article-img"/>
+          <div class="article-meta">
+            <div class="article-cat">Trophy Room</div>
+            <h3 class="article-title">Our Achievements</h3>
+            <div class="article-desc">Academic trophies, debate victories, and creative writing awards. Dive into a decade of accomplishments in the Trophy Room.</div>
+            <a href="achievements.html" class="read-more-link btn-glow">See All</a>
           </div>
-          <div class="visual-card-bg-circle"></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       PILLARS SECTION
-  ══════════════════════════════ -->
-  <section class="pillars">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">What We Stand For</span>
-        <h2>Our Three Pillars</h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="pillars-grid">
-        <div class="pillar-card" data-aos="flip-left" data-aos-delay="0">
-          <div class="pillar-icon">✍️</div>
-          <h3>Write</h3>
-          <p>Cultivating literary voices through essays, creative writing, and journalistic expression that challenge and inspire.</p>
-        </div>
-        <div class="pillar-card" data-aos="flip-left" data-aos-delay="150">
-          <div class="pillar-icon">🗣️</div>
-          <h3>Speak</h3>
-          <p>Developing confident orators who articulate ideas with clarity, passion, and persuasive power on any stage.</p>
-        </div>
-        <div class="pillar-card" data-aos="flip-left" data-aos-delay="300">
-          <div class="pillar-icon">💡</div>
-          <h3>Think</h3>
-          <p>Fostering critical minds that question, analyze, and synthesize complex ideas into compelling arguments and insights.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       RECENT ACHIEVEMENTS PREVIEW
-  ══════════════════════════════ -->
-  <section class="achievements-preview">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-label">Our Trophy Room</span>
-        <h2>Recent <em class="gold-text">Achievements</em></h2>
-        <div class="divider"></div>
-        <p>A testament to the relentless pursuit of excellence by our members and leadership.</p>
-      </div>
-
-      <div class="ach-preview-grid">
-        <div class="ach-card" data-aos="zoom-in" data-aos-delay="0">
-          <div class="ach-card-year">2024</div>
-          <h4>National Debate Championship</h4>
-          <p>1st Place — Federal Schools Debate Competition, Abuja</p>
-          <span class="ach-tag">Debate</span>
-        </div>
-        <div class="ach-card" data-aos="zoom-in" data-aos-delay="100">
-          <div class="ach-card-year">2024</div>
-          <h4>Best Literary Society</h4>
-          <p>Osun State Schools Literary Festival — Outstanding Society Award</p>
-          <span class="ach-tag">Literary</span>
-        </div>
-        <div class="ach-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="ach-card-year">2023</div>
-          <h4>Essay Competition Gold</h4>
-          <p>Southwest Regional Essay Championship — First Place</p>
-          <span class="ach-tag">Writing</span>
-        </div>
-      </div>
-
-      <div style="text-align:center; margin-top: 48px;" data-aos="fade-up">
-        <a href="achievements.html" class="btn btn-gold">View All Achievements</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       QUOTE SECTION
-  ══════════════════════════════ -->
-  <section class="quote-section" data-aos="fade-up">
-    <div class="container">
-      <div class="quote-block">
-        <div class="ornament"><span>❝</span></div>
-        <blockquote>
-          The pen is mightier than the sword, and the eloquent voice mightier still.
-        </blockquote>
-        <cite>— ACI LADS Founding Principle</cite>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════
-       CTA SECTION
-  ══════════════════════════════ -->
-  <section class="cta-section" data-aos="zoom-in">
-    <div class="container">
-      <div class="cta-box">
-        <div class="cta-decoration"></div>
-        <span class="section-label">Join the Society</span>
-        <h2>Ready to Find <em class="gold-text">Your Voice?</em></h2>
-        <p>Become part of a legacy that transforms students into leaders through the art of words.</p>
-        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:32px;">
-          <a href="contact.html" class="btn btn-gold">Get in Touch</a>
-          <a href="excos.html" class="btn btn-outline">Meet the Board</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <div id="footer-mount"></div>
-
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
-  <script src="components.js"></script>
-  <script src="main.js"></script>
-  <script src="index.js"></script>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
