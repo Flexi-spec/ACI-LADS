@@ -1,59 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <title>Contact | ACI LADS</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="assets/logo.png"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact ACI LADS Executive Council - Literary and Debating Society of Ambassadors College Ile-Ife. For S-Course applications, inquiries, and collaboration.">
+  <title>Contact Us | ACI LADS - Ambassadors College Ile-Ife</title>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --navy: #0a2540;
+      --bright-gold: #f4c95d;
+      --sky: #00d4ff;
+      --light: #f8f9fa;
+      --cream: #fffdf7;
+    }
+    
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    
+    header {
+      background: rgba(10,37,64,0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: white;
+      font-size: 2.1rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    
+    .logo img { height: 62px; filter: drop-shadow(0 6px 12px rgba(244,201,93,0.6)); }
+    
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 6px;
+    }
+    
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--bright-gold), var(--sky));
+      transition: width 0.4s;
+    }
+    
+    .nav-links a:hover:after, .nav-links a.active:after { width: 100%; }
+    .nav-links a:hover { color: var(--bright-gold); }
+    
+    .hamburger {
+      display: none;
+      font-size: 2.3rem;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .hero-contact {
+      height: 65vh;
+      background: linear-gradient(135deg, rgba(10,37,64,0.85), rgba(0,212,255,0.4)),
+                  url('https://source.unsplash.com/random/1920x1080/?contact,students,school') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    section { padding: 110px 6%; max-width: 1400px; margin: 0 auto; }
+    
+    h2 {
+      font-size: 3.6rem;
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 4rem;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 4rem;
+    }
+    
+    .form-container {
+      background: white;
+      padding: 3rem;
+      border-radius: 28px;
+      box-shadow: 0 20px 65px rgba(0,0,0,0.1);
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 1.5rem;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      font-size: 1.05rem;
+    }
+    
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--bright-gold);
+    }
+    
+    .btn-submit {
+      background: var(--bright-gold);
+      color: #0a2540;
+      padding: 16px 50px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.4s;
+    }
+    
+    .btn-submit:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(244,201,93,0.5);
+    }
+    
+    .exec-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+    
+    footer {
+      background: linear-gradient(to bottom, var(--navy), #051627);
+      color: white;
+      padding: 6rem 6% 3rem;
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--navy);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        font-size: 1.7rem;
+        transition: left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .nav-links.active { left: 0; }
+      .hamburger { display: block; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <div class="brand">
-      <img src="assets/logo.png" alt="ACI LADS" class="navbar-logo"/>
-      ACI LADS
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="assets/lads-logo.png" alt="ACI LADS Logo" onerror="this.src='https://via.placeholder.com/70x70/f4c95d/0a2540?text=LADS'">
+        <span>ACI LADS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="s-course.html">S-Course</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-contact" data-aos="fade-down">
+    <div style="text-align:center;">
+      <h1>Get In Touch</h1>
+      <p style="font-size:1.8rem; margin-top:1rem;">We're here for every ACI student</p>
+      <div style="margin-top:3rem; font-size:1.2rem;">
+        <i class="fas fa-lock"></i> Exclusive support for Ambassadors College Students
+      </div>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="excos.html">Excos</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="achievements.html">Achievements</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="navbar-btn btn-glow" onclick="location.href='contact.html'">Get Involved</button>
-    <div class="hamburger" tabindex="0" aria-label="Open Menu">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-  <main>
-    <div class="contact-container">
-      <h1 class="section-title" data-aos="zoom-in-down">Connect With Us</h1>
-      <div class="contact-form" data-aos="fade-up">
-        <form autocomplete="off">
-          <div class="form-field">
-            <label for="name">Name</label>
-            <input id="name" required type="text" placeholder="Your Name"/>
-          </div>
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input id="email" required type="email" placeholder="Your Email"/>
-          </div>
-          <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" required rows="4" placeholder="Your message..."></textarea>
-          </div>
-          <button type="submit" class="btn-glow">Send Message</button>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section data-aos="fade-up">
+    <h2>Reach Out to the Executive Council</h2>
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="form-container" data-aos="fade-right">
+        <h3 style="margin-bottom:1.5rem; color:var(--navy);">Send us a Message</h3>
+        <form id="contactForm">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="ACI Email or Phone" required>
+          <input type="text" placeholder="Class / Level (e.g., SS2)" required>
+          <select required>
+            <option value="">Select Category</option>
+            <option value="s-course">S-Course Application / Inquiry</option>
+            <option value="debate">Debate Training</option>
+            <option value="writing">Writing Workshop</option>
+            <option value="general">General Inquiry</option>
+          </select>
+          <textarea rows="6" placeholder="Your message..." required></textarea>
+          <button type="submit" class="btn-submit">Send Message (ACI Students Only)</button>
         </form>
-        <div class="social-icons" data-aos="flip-left">
-          <a href="https://instagram.com/acilads" target="_blank" class="social-icon" aria-label="Instagram"><!-- Instagram SVG --><svg width="24" height="24" fill="none" stroke="#001F3F" stroke-width="2.2" viewBox="0 0 24 24"><rect x="2.7" y="2.7" width="18.6" height="18.6" rx="6" fill="none"/><circle cx="12" cy="12" r="5"/><circle cx="17.2" cy="6.8" r="1.2"/></svg></a>
-          <a href="https://wa.me/2349000000000" target="_blank" class="social-icon" aria-label="WhatsApp"><!-- WhatsApp SVG --><svg width="25" height="25" stroke="#001F3F" fill="none" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 0-16.2 7.1l-1.3 4.1 4.2-1.2A9 9 0 1 0 21 12Z"/><path d="M16.1 14.2c-.3-.2-1.9-.9-2.2-1a1 1 0 0 0-.8.1c-.2.2-.8 1-1 1.2s-.3.3-.7.1c-.4-.2-1.6-.6-3-1.8-1.1-.9-1.8-2-2-2.3-.2-.4 0-.6.1-.8.1-.2.2-.5.3-.6.1-.2.1-.4.2-.6 0-.2 0-.5-.1-.7-.2-.3-1-2.5-1.4-3.3-.2-.4-.5-.4-.7-.3a6.96 6.96 0 0 0-3 7.9c0 5.1 4.2 9.3 9.3 9.3 2.5 0 4.8-1 6.5-2.6a6.96 6.96 0 0 0 2.2-6.1c-.1 0-.3 0-.7.1s-.4.2-.6.5z"/></svg></a>
+      </div>
+
+      <!-- Executive Info -->
+      <div data-aos="fade-left">
+        <div class="exec-card">
+          <h4><i class="fas fa-user-tie"></i> President</h4>
+          <p><strong>[President Name]</strong><br>SS3 • 080XXXXXXXX</p>
+        </div>
+        <div class="exec-card">
+          <h4><i class="fas fa-user-tie"></i> Vice President (Literary)</h4>
+          <p><strong>[VP Name]</strong><br>SS2 • 080XXXXXXXX</p>
+        </div>
+        <div class="exec-card">
+          <h4><i class="fas fa-user-tie"></i> Faculty Advisor</h4>
+          <p><strong>Mr./Mrs. [Name]</strong><br>School Staff</p>
+        </div>
+        
+        <div style="margin-top:3rem; background:white; padding:2rem; border-radius:20px; box-shadow:0 15px 50px rgba(0,0,0,0.08);">
+          <p style="font-weight:700;">Quick Note:</p>
+          <p>All inquiries are handled exclusively for current Ambassadors College Ile-Ife students. Expect a response within 48 hours during term time.</p>
         </div>
       </div>
     </div>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="scripts.js"></script>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="font-size:2.2rem; font-weight:700;">ACI LADS</p>
+    <p>Literary & Debating Society • Ambassadors College Ile-Ife</p>
+    <p style="margin-top:4rem; opacity:0.8;">© 2026 • Strictly for Current ACI Students Only</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1100, once: false });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '☰';
+      });
+    });
+
+    // Simple form submission alert (replace with real backend later)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been received. An ACI LADS executive will reply soon.");
+      this.reset();
+    });
+  </script>
 </body>
 </html>

@@ -1,200 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>ACI LADS | The Premier Literary & Debating Society - Ambassadors College</title>
-<meta name="title" content="ACI LADS | The Premier Literary & Debating Society - Ambassadors College">
-<meta name="description" content="Official platform for ACI LADS at Ambassadors College Ile-Ife. Nurturing the next generation of eloquent speakers, critical thinkers, and world-class writers.">
-<meta name="keywords" content="ACI LADS, Ambassadors College Ile-Ife, Literary and Debating Society Nigeria, Debating in Ife, Public Speaking, Student Writers Nigeria, ACI LADS Nigeria">
-<meta name="author" content="Flexi Dev Studio">
-<meta name="robots" content="index, follow">
-<meta name="language" content="English">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://acilads.vercel.app/">
-<meta property="og:title" content="ACI LADS | Excellence in Speech & Writing">
-<meta property="og:description" content="Join the elite literary circle of Ambassadors College Ile-Ife. Excellence is our standard. Discover our legacy of trophies and brilliant articles.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80">
-<meta property="og:site_name" content="ACI LADS">
-
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://acilads.vercel.app/">
-<meta property="twitter:title" content="ACI LADS | Royal Literary Excellence">
-<meta property="twitter:description" content="Nurturing eloquent speakers and world-class writers in the heart of Ile-Ife.">
-<meta property="twitter:image" content="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80">
-
-<meta name="geo.region" content="NG-OS" />
-<meta name="geo.placename" content="Ile-Ife" />
-<meta name="geo.position" content="7.4667;4.5667" />
-<meta name="ICBM" content="7.4667, 4.5667" />
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="theme-color" content="#001F3F">
-<link rel="canonical" href="https://acilads.vercel.app/" />
-<link rel="icon" href="assets/logo.png" type="image/png" />
-    <meta name="google-site-verification" content="V5fJknzW_jqkhS_9AHXuvdTx9DdiJfPc3f_FJhcFVg4" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>ACI LADS | Literary & Debating Society - Ambassadors College Ile-Ife</title>
-    <meta name="description" content="Royal Literary excellence. Discover the Literary and Debating Society of Ambassadors College Ile-Ife.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ACI LADS - Official Literary & Debating Society of Ambassadors College Ile-Ife. Exclusive for ACI students: debating, creative writing, public speaking & leadership training.">
+  <meta name="keywords" content="ACI LADS, Ambassadors College Ile-Ife, debating society, literary society, S-Course, public speaking, ACI students">
+  <meta name="author" content="ACI LADS Executive Council">
+  <title>ACI LADS | Literary & Debating Society - Ambassadors College Ile-Ife</title>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --navy: #0a2540;
+      --bright-gold: #f4c95d;
+      --sky: #00d4ff;
+      --light: #f8f9fa;
+      --cream: #fffdf7;
+    }
     
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="logo.png" />
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: var(--cream);
+      overflow-x: hidden;
+    }
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    header {
+      background: rgba(10,37,64,0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.4s;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    }
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: white;
+      font-size: 2rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    
+    .logo img { height: 58px; filter: drop-shadow(0 6px 12px rgba(244,201,93,0.6)); }
+    
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 6px;
+    }
+    
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--bright-gold), var(--sky));
+      transition: width 0.4s;
+    }
+    
+    .nav-links a:hover:after, .nav-links a.active:after { width: 100%; }
+    
+    .hamburger {
+      display: none;
+      font-size: 2.2rem;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .hero {
+      height: 100dvh;
+      min-height: 620px;
+      background: linear-gradient(135deg, rgba(10,37,64,0.82), rgba(0,212,255,0.45)), 
+                  url('https://source.unsplash.com/random/1920x1080/?debate,students,school') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(244,201,93,0.25) 0%, transparent 60%);
+      animation: heroGlow 18s infinite alternate;
+    }
+    
+    @keyframes heroGlow { 0%{opacity:0.7; transform:scale(1);} 100%{opacity:1; transform:scale(1.08);} }
+    
+    .hero-content h1 { font-size: clamp(2.8rem, 8vw, 6rem); font-weight: 900; margin-bottom: 1rem; }
+    
+    .restricted {
+      background: rgba(255,255,255,0.25);
+      padding: 12px 30px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      margin-top: 2rem;
+    }
+    
+    section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+    
+    h2 { font-size: clamp(2.4rem, 6vw, 3.8rem); text-align: center; color: var(--navy); margin-bottom: 3.5rem; position: relative; }
+    
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(to right, var(--bright-gold), var(--sky));
+      border-radius: 10px;
+    }
+    
+    .stats-grid, .pillars-grid, .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .stat-card, .pillar-card, .testimonial-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 24px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+      transition: all 0.5s;
+    }
+    
+    .pillar-card:hover, .stat-card:hover { transform: translateY(-15px); }
+    
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--navy);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        font-size: 1.8rem;
+        transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 999;
+      }
+      
+      .nav-links.active { left: 0; }
+      .hamburger { display: block; }
+      
+      section { padding: 80px 5%; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="glass-nav">
-        <div class="brand">
-            <img src="assets/logo.png" alt="ACI LADS" class="navbar-logo" />
-            <span class="brand-text">ACI <span class="gold-txt">LADS</span></span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="excos.html">Excos</a></li>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-actions">
-            <button class="navbar-btn btn-glow" onclick="location.href='contact.html'">Join Society</button>
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="assets/lads-logo.png" alt="ACI LADS Logo" onerror="this.src='https://via.placeholder.com/70x70/f4c95d/0a2540?text=LADS'">
+        <span>ACI LADS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="s-course.html">S-Course</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
     </nav>
+  </header>
 
-    <main>
-        <section class="hero center">
-            <div class="hero-overlay"></div>
-            <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
-                <div class="logo-wrapper">
-                    <img src="assets/logo.png" alt="ACI LADS Logo" class="hero-logo" />
-                </div>
-                <h2 class="hero-subtitle gold-txt">The Premier Literary Society</h2>
-                <h1 class="motto-type motto text-shadow"></h1>
-                <p class="hero-tagline">Nurturing eloquent speakers, critical thinkers, and world-class writers in the heart of Ile-Ife.</p>
-                
-                <div class="hero-btns">
-                    <a href="#welcome-section" class="enter-btn btn-glow">Explore Legacy</a>
-                    <a href="articles.html" class="outline-btn">Read Articles</a>
-                </div>
-            </div>
-            
-            <div class="scroll-down"></div>
-        </section>
+  <!-- HERO - STUDENT ONLY -->
+  <section class="hero" data-aos="fade-down">
+    <div class="hero-content" style="max-width:920px; padding:0 20px; text-align:center;">
+      <h1>ACI LADS</h1>
+      <p style="font-size:1.6rem; margin:1rem 0;">Welcome, Ambassadors College Student</p>
+      <p style="max-width:700px; margin:0 auto 2rem;">Your exclusive home for mastering debating, creative writing, public speaking & leadership.</p>
+      
+      <a href="s-course.html" class="btn-primary" style="background:var(--bright-gold); color:#0a2540; padding:18px 50px; border-radius:50px; font-weight:700; text-decoration:none; display:inline-block; margin:10px;">Join S-Course 2026/2027</a>
+      <a href="about.html" class="btn-primary" style="background:transparent; border:3px solid white; color:white; padding:18px 50px; border-radius:50px; font-weight:700; text-decoration:none; display:inline-block; margin:10px;">Learn About LADS</a>
+      
+      <div class="restricted">
+        <i class="fas fa-lock"></i> STRICTLY FOR CURRENT ACI STUDENTS ONLY
+      </div>
+    </div>
+  </section>
 
-        <section class="stats-board" id="welcome-section">
-            <div class="container grid-4">
-                <div class="stat-item" data-aos="fade-up">
-                    <h2 class="gold-txt">50+</h2>
-                    <p>Awards Won</p>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                    <h2 class="gold-txt">200+</h2>
-                    <p>Total Members</p>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                    <h2 class="gold-txt">15+</h2>
-                    <p>Years of Excellence</p>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                    <h2 class="gold-txt">100%</h2>
-                    <p>Brilliance</p>
-                </div>
-            </div>
-        </section>
+  <!-- STATS -->
+  <section data-aos="fade-up">
+    <h2>Our Impact at ACI</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3 style="color:var(--bright-gold); font-size:3.5rem;">50+</h3>
+        <p>Major Trophies & Awards Won by ACI Students</p>
+      </div>
+      <div class="stat-card">
+        <h3 style="color:var(--bright-gold); font-size:3.5rem;">250+</h3>
+        <p>ACI Students Trained in Debating & Writing</p>
+      </div>
+      <div class="stat-card">
+        <h3 style="color:var(--bright-gold); font-size:3.5rem;">17</h3>
+        <p>Years Empowering ACI Voices</p>
+      </div>
+    </div>
+  </section>
 
-        <section class="pillars-section container">
-            <div class="section-title center" data-aos="fade-down">
-                <span class="gold-txt">Our Pillars</span>
-                <h2>What Makes Us Royal</h2>
-            </div>
-            
-            <div class="feed-grid">
-                <div class="article-card glass-card" data-aos="fade-right">
-                    <div class="icon-box"><i class="fas fa-microphone-alt"></i></div>
-                    <div class="article-meta">
-                        <h3 class="article-title">Public Speaking</h3>
-                        <div class="article-desc">Mastering the art of persuasion and the power of the spoken word through rigorous debating sessions.</div>
-                    </div>
-                </div>
+  <!-- PILLARS -->
+  <section style="background:var(--light);" data-aos="fade-up">
+    <h2>What We Offer ACI Students</h2>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <i class="fas fa-microphone-alt" style="font-size:4rem; color:var(--bright-gold);"></i>
+        <h3>Debating Mastery</h3>
+        <p>Rigorous training for inter-house, state & national competitions.</p>
+      </div>
+      <div class="pillar-card">
+        <i class="fas fa-feather-pointed" style="font-size:4rem; color:var(--bright-gold);"></i>
+        <h3>Creative Writing</h3>
+        <p>Poetry, essays, articles — publish on our Medium.</p>
+      </div>
+      <div class="pillar-card">
+        <i class="fas fa-users-gear" style="font-size:4rem; color:var(--bright-gold);"></i>
+        <h3>Leadership Skills</h3>
+        <p>Build character & confidence for life beyond ACI.</p>
+      </div>
+    </div>
+  </section>
 
-                <div class="article-card glass-card" data-aos="fade-up">
-                    <div class="icon-box"><i class="fas fa-pen-nib"></i></div>
-                    <div class="article-meta">
-                        <h3 class="article-title">Creative Writing</h3>
-                        <div class="article-desc">Exploring the depths of imagination and technical writing to produce world-class literary works.</div>
-                    </div>
-                </div>
+  <!-- TESTIMONIALS -->
+  <section data-aos="fade-up">
+    <h2>What ACI Students Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">"LADS changed how I speak in public. I won my first debate after joining!" — SS2 Student</div>
+      <div class="testimonial-card">"The writing workshops helped me get published. Best decision as an ACI student." — SS1 Student</div>
+    </div>
+  </section>
 
-                <div class="article-card glass-card" data-aos="fade-left">
-                    <div class="icon-box"><i class="fas fa-university"></i></div>
-                    <div class="article-meta">
-                        <h3 class="article-title">Leadership</h3>
-                        <div class="article-desc">Building character and integrity in our members, preparing them for future global leadership roles.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- EVENTS & QUICK ACCESS -->
+  <section style="background:var(--navy); color:white;" data-aos="fade-up">
+    <h2 style="color:white;">Upcoming for ACI Students</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto 3rem;">S-Course 2026/2027 • Inter-House Debates • Writing Workshops</p>
+    <div style="text-align:center;">
+      <a href="s-course.html" class="btn-primary" style="background:var(--bright-gold); color:#0a2540;">Enroll Now (ACI Only)</a>
+    </div>
+  </section>
 
-        <section class="cta-banner" data-aos="zoom-in">
-            <div class="container center">
-                <h2>Ready to unlock your potential?</h2>
-                <p>Join the society that shapes the voices of tomorrow.</p>
-                <button class="enter-btn btn-glow" onclick="location.href='contact.html'">Apply Now</button>
-            </div>
-        </section>
-    </main>
+  <!-- FOOTER -->
+  <footer style="background:var(--navy); color:white; padding:5rem 5%; text-align:center;">
+    <p style="font-size:2rem; font-weight:700;">ACI LADS</p>
+    <p>Exclusive Literary & Debating Society • Ambassadors College Ile-Ife</p>
+    <p style="margin-top:3rem; opacity:0.8;">© 2026 • Strictly for Current ACI Students</p>
+  </footer>
 
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <img src="assets/logo.png" alt="Logo" class="footer-logo">
-                <p>ACI LADS is the official Literary and Debating Society of Ambassadors College Ile-Ife. Excellence is our standard.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html">Our History</a></li>
-                    <li><a href="excos.html">The Board</a></li>
-                    <li><a href="achievements.html">Trophies</a></li>
-                    <li><a href="articles.html">Medium Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Follow Our Journey</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom center">
-            <p>&copy; 2026 ACI LADS | Designed by <span class="gold-txt">2026/2027</span></p>
-        </div>
-    </footer>
+  <script>
+    AOS.init({ duration: 1000, once: true });
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src="scripts.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({ duration: 1000, once: true });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
-        // Initialize Typewriter
-        const mottoSpan = document.querySelector('.motto-type');
-        new Typewriter(mottoSpan, {
-            strings: ['Excellence in Speech.', 'Brilliance in Writing.', 'The Royal Society.'],
-            autoStart: true,
-            loop: true,
-        });
-    </script>
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.textContent = '☰';
+      });
+    });
+  </script>
 </body>
 </html>

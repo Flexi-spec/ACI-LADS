@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Achievements of ACI LADS - Literary and Debating Society of Ambassadors College Ile-Ife. Multiple national and state titles in debating, public speaking, and writing competitions.">
-  <title>Achievements | ACI LADS - Ambassadors College Ile-Ife</title>
+  <meta name="description" content="S-Course 2025/2026 & 2026/2027 - Official training program of ACI LADS. Exclusive debating, writing, and leadership course for Ambassadors College Ile-Ife students.">
+  <title>S-Course | ACI LADS - Ambassadors College Ile-Ife</title>
   
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -29,12 +29,12 @@
     }
     
     header {
-      background: rgba(10, 37, 64, 0.92);
+      background: rgba(10,37,64,0.95);
       backdrop-filter: blur(20px);
       position: fixed;
       width: 100%;
       z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      transition: all 0.4s;
     }
     
     nav {
@@ -80,7 +80,7 @@
       width: 0;
       height: 3px;
       background: linear-gradient(90deg, var(--bright-gold), var(--sky));
-      transition: width 0.4s ease;
+      transition: width 0.4s;
     }
     
     .nav-links a:hover:after,
@@ -94,11 +94,11 @@
       cursor: pointer;
     }
     
-    .hero-achieve {
-      height: 70vh;
-      min-height: 600px;
-      background: linear-gradient(135deg, rgba(10,37,64,0.8), rgba(0,212,255,0.4)),
-                  url('https://source.unsplash.com/random/1920x1080/?trophy,award,debate') center/cover no-repeat;
+    .hero-scourse {
+      height: 75vh;
+      min-height: 580px;
+      background: linear-gradient(135deg, rgba(10,37,64,0.85), rgba(0,212,255,0.45)),
+                  url('https://source.unsplash.com/random/1920x1080/?classroom,students,debate') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -107,26 +107,23 @@
       position: relative;
     }
     
-    .hero-achieve::before {
+    .hero-scourse::before {
       content: '';
       position: absolute;
       inset: 0;
       background: radial-gradient(circle, rgba(244,201,93,0.3) 0%, transparent 70%);
-      animation: glow 20s infinite alternate;
     }
-    
-    @keyframes glow { 0% { opacity: 0.6; } 100% { opacity: 1; } }
     
     .hero-content h1 {
       font-size: clamp(3rem, 7vw, 5.5rem);
       font-weight: 900;
-      text-shadow: 0 10px 40px rgba(0,0,0,0.7);
+      margin-bottom: 1rem;
     }
     
-    section { padding: 120px 6%; max-width: 1400px; margin: 0 auto; }
+    section { padding: 110px 6%; max-width: 1400px; margin: 0 auto; }
     
     h2 {
-      font-size: 3.7rem;
+      font-size: 3.6rem;
       text-align: center;
       color: var(--navy);
       margin-bottom: 4rem;
@@ -145,50 +142,50 @@
       border-radius: 10px;
     }
     
-    /* TROPHY GALLERY - COOL GRID */
-    .trophy-grid {
+    .course-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 3rem;
     }
     
-    .trophy-card {
+    .course-card {
       background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      padding: 3rem 2.5rem;
+      border-radius: 28px;
+      box-shadow: 0 20px 65px rgba(0,0,0,0.1);
       transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     
-    .trophy-card:hover {
-      transform: translateY(-20px) scale(1.03);
+    .course-card:hover {
+      transform: translateY(-25px);
       box-shadow: 0 30px 80px rgba(0,212,255,0.25);
     }
     
-    .trophy-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
+    .module-list {
+      list-style: none;
     }
     
-    .trophy-info {
-      padding: 1.8rem;
-      text-align: center;
+    .module-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     
-    .trophy-info h3 {
+    .module-list li:before {
+      content: '✓';
       color: var(--bright-gold);
-      font-size: 1.6rem;
+      font-weight: bold;
     }
     
-    /* TIMELINE OF WINS */
-    .achieve-timeline {
+    .timeline {
       position: relative;
-      max-width: 1100px;
-      margin: 5rem auto;
+      max-width: 1000px;
+      margin: 4rem auto;
     }
     
-    .achieve-timeline::before {
+    .timeline::before {
       content: '';
       position: absolute;
       left: 50%;
@@ -200,9 +197,9 @@
     }
     
     .timeline-item {
-      margin: 4rem 0;
+      margin: 3.5rem 0;
       display: flex;
-      align-items: center;
+      justify-content: space-between;
       position: relative;
     }
     
@@ -211,32 +208,21 @@
     .timeline-content {
       width: 45%;
       background: white;
-      padding: 2.2rem 2.8rem;
+      padding: 2rem 2.5rem;
       border-radius: 22px;
       box-shadow: 0 15px 50px rgba(0,0,0,0.08);
     }
     
     .timeline-dot {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       background: var(--bright-gold);
       border: 6px solid white;
       border-radius: 50%;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      box-shadow: 0 0 0 10px rgba(0,212,255,0.3);
-      z-index: 10;
-    }
-    
-    .year-badge {
-      background: var(--navy);
-      color: white;
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-weight: 700;
-      display: inline-block;
-      margin-bottom: 1rem;
+      z-index: 2;
     }
     
     footer {
@@ -245,22 +231,6 @@
       padding: 6rem 6% 3rem;
       text-align: center;
     }
-    
-    .footer-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2.5rem;
-      max-width: 1000px;
-      margin: 3rem auto;
-    }
-    
-    .footer-links a {
-      color: var(--bright-gold);
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    
-    .footer-links a:hover { color: var(--sky); }
     
     @media (max-width: 768px) {
       .nav-links {
@@ -279,7 +249,7 @@
       }
       .nav-links.active { left: 0; }
       .hamburger { display: block; }
-      .timeline-item { flex-direction: column !important; }
+      .timeline-item { flex-direction: column !important; text-align: center; }
       .timeline-content { width: 90%; margin: 1.5rem auto; }
     }
   </style>
@@ -296,8 +266,8 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="achievements.html" class="active">Achievements</a></li>
-        <li><a href="s-course.html">S-Course</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="s-course.html" class="active">S-Course</a></li>
         <li><a href="articles.html">Articles</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -306,118 +276,103 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero-achieve" data-aos="fade-down">
+  <section class="hero-scourse" data-aos="fade-down">
     <div class="hero-content">
-      <h1>Our Achievements</h1>
-      <p style="font-size: 1.8rem; margin-top: 1rem;">Excellence in Speech, Writing & Leadership</p>
-      <div style="margin-top: 3rem; font-size: 1.2rem; opacity: 0.95;">
-        <i class="fas fa-trophy"></i> Making Ambassadors College Proud Since 2009
+      <h1>S-Course 2026/2027</h1>
+      <p style="font-size: 1.8rem; margin-top: 1rem;">Structured Excellence Program</p>
+      <div style="margin-top: 3rem; font-size: 1.2rem;">
+        <i class="fas fa-lock"></i> Exclusive Training for Ambassadors College Students Only
       </div>
     </div>
   </section>
 
-  <!-- TROPHY HIGHLIGHTS -->
+  <!-- INTRODUCTION -->
   <section data-aos="fade-up">
-    <h2>Hall of Fame Highlights</h2>
-    <div class="trophy-grid">
-      <div class="trophy-card" data-aos="zoom-in">
-        <img src="https://source.unsplash.com/random/600x400/?trophy,gold" alt="National Debate Champions">
-        <div class="trophy-info">
-          <span class="year-badge">2025</span>
-          <h3>National Debating Champions</h3>
-          <p>1st Place - Inter-School National Debate Competition</p>
-        </div>
-      </div>
-      
-      <div class="trophy-card" data-aos="zoom-in" data-aos-delay="150">
-        <img src="https://source.unsplash.com/random/600x400/?award,medal" alt="State Writing Award">
-        <div class="trophy-info">
-          <span class="year-badge">2024</span>
-          <h3>State Essay Competition Winners</h3>
-          <p>Multiple Gold Medals in Creative & Analytical Writing</p>
-        </div>
-      </div>
-      
-      <div class="trophy-card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://source.unsplash.com/random/600x400/?public-speaking" alt="Public Speaking Award">
-        <div class="trophy-info">
-          <span class="year-badge">2023</span>
-          <h3>Regional Oratory Champions</h3>
-          <p>Best Speaker Awards across multiple categories</p>
-        </div>
-      </div>
-    </div>
+    <h2>Transform Your Voice at ACI</h2>
+    <p style="max-width: 820px; margin: 0 auto; text-align: center; font-size: 1.3rem;">
+      The S-Course is ACI LADS flagship program designed exclusively for current students of Ambassadors College Ile-Ife. 
+      Over 9 months, you'll master debating, creative writing, public speaking, and leadership through intensive weekly sessions.
+    </p>
   </section>
 
-  <!-- TIMELINE OF MAJOR WINS -->
+  <!-- TWO COURSES -->
   <section style="background: var(--light);" data-aos="fade-up">
-    <h2>Our Journey of Success</h2>
-    <div class="achieve-timeline">
+    <h2>Available Programs</h2>
+    <div class="course-grid">
+      <div class="course-card" data-aos="zoom-in">
+        <h3 style="color: var(--bright-gold);">S-Course 2025/2026</h3>
+        <p><strong>Ongoing • Limited Spots Remaining</strong></p>
+        <ul class="module-list">
+          <li>Advanced Debating Techniques</li>
+          <li>Essay & Article Writing Mastery</li>
+          <li>Public Speaking Drills</li>
+          <li>Mock Competitions & Feedback</li>
+        </ul>
+        <a href="contact.html" style="display:block; margin-top:2rem; background:var(--bright-gold); color:#0a2540; padding:14px; border-radius:50px; text-align:center; text-decoration:none; font-weight:700;">Apply / Continue</a>
+      </div>
+      
+      <div class="course-card" data-aos="zoom-in" data-aos-delay="200">
+        <h3 style="color: var(--bright-gold);">S-Course 2026/2027</h3>
+        <p><strong>Applications Open Now</strong></p>
+        <ul class="module-list">
+          <li>British Parliamentary Debate</li>
+          <li>Creative Writing & Poetry</li>
+          <li>Leadership & Character Development</li>
+          <li>National Competition Preparation</li>
+        </ul>
+        <a href="contact.html" style="display:block; margin-top:2rem; background:var(--bright-gold); color:#0a2540; padding:14px; border-radius:50px; text-align:center; text-decoration:none; font-weight:700;">Apply Now (ACI Students Only)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSE TIMELINE -->
+  <section data-aos="fade-up">
+    <h2>Program Structure</h2>
+    <div class="timeline">
       <div class="timeline-item" data-aos="fade-right">
         <div class="timeline-content">
-          <span class="year-badge">2009</span>
-          <h3>Founding & First Wins</h3>
-          <p>Established ACI LADS and secured inaugural inter-house debating titles.</p>
+          <span style="background:var(--navy); color:white; padding:6px 18px; border-radius:50px;">Phase 1</span>
+          <h3>Foundation (Months 1-3)</h3>
+          <p>Core skills in argumentation, research, and confident delivery.</p>
         </div>
         <div class="timeline-dot"></div>
       </div>
-      
       <div class="timeline-item" data-aos="fade-left">
         <div class="timeline-content">
-          <span class="year-badge">2018</span>
-          <h3>State Breakthrough</h3>
-          <p>First State-level championship in Public Speaking and Essay Writing.</p>
+          <span style="background:var(--navy); color:white; padding:6px 18px; border-radius:50px;">Phase 2</span>
+          <h3>Advanced Training (Months 4-6)</h3>
+          <p>Specialized modules + live mock debates and writing critiques.</p>
         </div>
         <div class="timeline-dot"></div>
       </div>
-      
       <div class="timeline-item" data-aos="fade-right">
         <div class="timeline-content">
-          <span class="year-badge">2022</span>
-          <h3>National Recognition</h3>
-          <p>Multiple national finalist positions and Best Debater awards.</p>
-        </div>
-        <div class="timeline-dot"></div>
-      </div>
-      
-      <div class="timeline-item" data-aos="fade-left">
-        <div class="timeline-content">
-          <span class="year-badge">2025</span>
-          <h3>Current Dominance</h3>
-          <p>Continued success with S-Course participants winning regional titles.</p>
+          <span style="background:var(--navy); color:white; padding:6px 18px; border-radius:50px;">Phase 3</span>
+          <h3>Competition Ready (Months 7-9)</h3>
+          <p>Full preparation for inter-house, state, and national competitions.</p>
         </div>
         <div class="timeline-dot"></div>
       </div>
     </div>
   </section>
 
-  <!-- MORE ACHIEVEMENTS SECTION -->
-  <section data-aos="fade-up">
-    <h2>Additional Accolades</h2>
-    <div style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.25rem;">
-      <p>Over 50 major awards won • Consistent representation at national competitions • Alumni now excelling in universities and beyond.</p>
-      <p style="margin-top: 2rem;">Our members have represented Ambassadors College with distinction in debating, poetry slams, mock trials, and literary festivals.</p>
+  <!-- BENEFITS & ELIGIBILITY -->
+  <section style="background: var(--navy); color: white;" data-aos="fade-up">
+    <h2 style="color:white;">Why Join S-Course?</h2>
+    <div style="max-width:900px; margin:0 auto; text-align:center; font-size:1.25rem;">
+      <p>Certificate of Completion • Priority selection for ACI debate teams • Networking with senior members • Direct coaching from executive council • Opportunity to represent ACI at national level.</p>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <p style="font-weight:700; margin-bottom:1rem;">Eligibility: Current Ambassadors College Ile-Ife Students (JSS2 – SS3)</p>
+      <a href="contact.html" class="btn" style="background:var(--bright-gold); color:#0a2540; padding:18px 55px; border-radius:50px; text-decoration:none; font-weight:700;">Apply for S-Course 2026/2027</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p style="font-size: 2.2rem; font-weight: 700;">ACI LADS</p>
+    <p style="font-size:2.2rem; font-weight:700;">ACI LADS</p>
     <p>Literary & Debating Society • Ambassadors College Ile-Ife</p>
-    
-    <div class="footer-links">
-      <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="s-course.html">S-Course</a>
-      </div>
-      <div>
-        <a href="articles.html">Articles</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    
-    <p style="margin-top: 4rem; opacity: 0.8;">&copy; 2026 ACI LADS • Excellence in Every Word</p>
+    <p style="margin-top:4rem; opacity:0.8;">© 2026 • Strictly for Current ACI Students</p>
   </footer>
 
   <script>
@@ -431,9 +386,12 @@
       hamburger.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
     });
 
-    // Active link
+    // Close menu on link click
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.getAttribute('href') === 'achievements.html') link.classList.add('active');
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '☰';
+      });
     });
   </script>
 </body>

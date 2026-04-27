@@ -1,58 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <title>About | ACI LADS</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="assets/logo.png"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About ACI LADS | Literary & Debating Society - Ambassadors College</title>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    :root {
+      --navy: #0a2540;
+      --bright-gold: #f4c95d;
+      --sky: #00d4ff;
+      --light: #f8f9fa;
+      --cream: #fffdf7;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    header {
+      background: rgba(10, 37, 64, 0.92);
+      backdrop-filter: blur(16px);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.4s ease;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: white;
+      font-size: 2rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .logo:hover { transform: scale(1.08); }
+    .logo img { height: 58px; filter: drop-shadow(0 4px 8px rgba(244,201,93,0.5)); }
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -6px;
+      left: 0;
+      background: linear-gradient(to right, var(--bright-gold), var(--sky));
+      transition: width 0.4s ease;
+    }
+    .nav-links a:hover:after, .nav-links a.active:after { width: 100%; }
+    .nav-links a:hover { color: var(--bright-gold); }
+    .hamburger {
+      display: none;
+      font-size: 2.2rem;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+    .hero-about {
+      height: 75vh;
+      background: linear-gradient(135deg, rgba(10,37,64,0.75), rgba(0,212,255,0.35)), 
+                  url('https://source.unsplash.com/random/1920x1080/?debate,students,bright') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-about::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(244,201,93,0.15) 0%, transparent 70%);
+      animation: pulse 15s infinite ease-in-out;
+    }
+    @keyframes pulse { 0%,100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+    .hero-content h1 {
+      font-size: 5.5rem;
+      font-weight: 900;
+      text-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      margin-bottom: 1rem;
+    }
+    .hero-content p { font-size: 1.7rem; max-width: 780px; margin: 0 auto 2rem; }
+    .btn {
+      padding: 18px 52px;
+      background: linear-gradient(90deg, var(--bright-gold), #ffeb3b);
+      color: #0a2540;
+      font-weight: 700;
+      border-radius: 60px;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 12px 40px rgba(244,201,93,0.5);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn:hover {
+      transform: translateY(-10px) scale(1.06);
+      box-shadow: 0 20px 50px rgba(0,212,255,0.4);
+    }
+    section { padding: 120px 6%; max-width: 1400px; margin: 0 auto; }
+    h2 {
+      font-size: 3.6rem;
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    h2:after {
+      content: '';
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(to right, var(--bright-gold), var(--sky));
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.8rem;
+    }
+    .pillar-card {
+      background: white;
+      padding: 3.2rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar-card:hover {
+      transform: translateY(-25px) rotate(2deg);
+      box-shadow: 0 30px 80px rgba(0,212,255,0.25);
+    }
+    .pillar-card i {
+      font-size: 4.8rem;
+      color: var(--bright-gold);
+      margin-bottom: 1.8rem;
+      transition: transform 0.4s;
+    }
+    .pillar-card:hover i { transform: scale(1.2) rotate(10deg); }
+    .timeline {
+      position: relative;
+      max-width: 1100px;
+      margin: 5rem auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, var(--sky), var(--bright-gold));
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      margin: 4rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+    .timeline-content {
+      width: 45%;
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+    }
+    .timeline-dot {
+      width: 28px;
+      height: 28px;
+      background: var(--bright-gold);
+      border: 5px solid white;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 8px rgba(0,212,255,0.3);
+      z-index: 2;
+    }
+    footer {
+      background: linear-gradient(to bottom, var(--navy), #051627);
+      color: white;
+      padding: 6rem 6% 3rem;
+      text-align: center;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+    .footer-links a {
+      color: var(--bright-gold);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    .footer-links a:hover { color: var(--sky); transform: translateX(8px); }
+    .social-icons a {
+      font-size: 1.8rem;
+      margin: 0 12px;
+      color: white;
+      transition: all 0.3s;
+    }
+    .social-icons a:hover { color: var(--bright-gold); transform: scale(1.3); }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 75px);
+        background: var(--navy);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 6rem;
+        transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      }
+      .nav-links.active { left: 0; }
+      .hamburger { display: block; }
+      .hero-about h1 { font-size: 3.8rem; }
+      .timeline-item { flex-direction: column !important; text-align: center; }
+      .timeline-content { width: 90%; margin: 1.5rem auto; }
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <div class="brand">
-      <img src="assets/logo.png" alt="ACI LADS" class="navbar-logo"/>
-      ACI LADS
+
+  <!-- HEADER - Now much cooler -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="assets/lads-logo.png" alt="ACI LADS Logo" onerror="this.src='https://via.placeholder.com/65x65/f4c95d/0a2540?text=LADS'">
+        <span>ACI LADS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="s-course.html">S-Course</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <!-- Bright Hero -->
+  <section class="hero-about" data-aos="fade-down">
+    <div class="hero-content">
+      <h1>ACI LADS</h1>
+      <p>The beating heart of eloquence, ideas, and leadership at Ambassadors College Ile-Ife</p>
+      <a href="#pillars" class="btn">Explore Our World</a>
+      <div style="margin-top: 3rem; font-size: 1.1rem; opacity: 0.95;">
+        <i class="fas fa-shield-alt"></i> Strictly for Ambassadors College Students
+      </div>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="excos.html">Excos</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="achievements.html">Achievements</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="navbar-btn btn-glow" onclick="location.href='contact.html'">Get Involved</button>
-    <div class="hamburger" tabindex="0" aria-label="Open Menu">
-      <span></span><span></span><span></span>
+  </section>
+
+  <!-- Who We Are -->
+  <section data-aos="fade-up">
+    <h2>Shaping Voices That Matter</h2>
+    <div style="max-width: 920px; margin: 0 auto; text-align: center; font-size: 1.35rem; line-height: 1.9;">
+      <p>Since 2009, ACI LADS has been the premier Literary and Debating Society of Ambassadors College. We turn passionate students into confident orators, sharp thinkers, and impactful writers who win competitions and inspire change.</p>
     </div>
-  </nav>
-  <main>
-    <section class="about-grid" style="margin-top:2.3rem;">
-      <div data-aos="fade-up" style="text-align:left;">
-        <h1>Our Legacy</h1>
-        <p>
-          <span class="gold-txt" style="font-family:'Playfair Display',serif;font-size:1.08em;">ACI LADS</span> is the Literary and Debating Society of Ambassadors College Ile-Ife—a forefront of spoken and written excellence. Founded to instill eloquence, critical thinking, and creative expression, our society upholds the proud tradition of student leadership, academic distinction, and artistic accomplishment.
-        </p>
-        <div style="margin-top:1.33rem;">
-          <h3 class="gold-txt" style="margin-bottom:0.3em;">Motto</h3>
-          <em style="color:var(--white);font-size:1.07em;">"Excellence in Speech, Brilliance in Writing."</em>
+  </section>
+
+  <!-- Cool Timeline -->
+  <section style="background: var(--light);" data-aos="fade-up">
+    <h2>Our Story So Far</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h3>2009 — The Spark</h3>
+          <p>A group of visionary students ignited the society with their love for words and debate.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h3>2018 — Rising Stars</h3>
+          <p>First major state and national wins. Membership exploded as word spread.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h3>2024-2025 — Digital Era</h3>
+          <p>Launch of structured S-Course programs and this vibrant online home.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars - Eye-catching -->
+  <section id="pillars" data-aos="fade-up">
+    <h2>Our Pillars of Excellence</h2>
+    <div class="pillar-grid">
+      <div class="pillar-card" data-aos="zoom-in">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>Debating Mastery</h3>
+        <p>Intensive training in logic, rebuttals, and powerful delivery across multiple debate formats.</p>
+      </div>
+      <div class="pillar-card" data-aos="zoom-in" data-aos-delay="150">
+        <i class="fas fa-feather-pointed"></i>
+        <h3>Literary Power</h3>
+        <p>Creative writing, poetry, essays, and critical thinking that produce publishable work.</p>
+      </div>
+      <div class="pillar-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-users-gear"></i>
+        <h3>Leadership Forge</h3>
+        <p>Building character, teamwork, and ethical leadership for lifelong success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section style="background: linear-gradient(135deg, var(--navy), #1e3a8a); color: white; text-align: center;" data-aos="fade-up">
+    <h2 style="color: white;">Ready to Find Your Voice?</h2>
+    <p style="font-size: 1.4rem; max-width: 700px; margin: 0 auto 2.5rem;">Join the most vibrant community of thinkers and speakers at ACI.</p>
+    <a href="contact.html" class="btn" style="background: white; color: var(--navy);">Apply to Join LADS Today</a>
+  </section>
+
+  <!-- Footer with Quick Links -->
+  <footer>
+    <p style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">ACI LADS</p>
+    <p>Literary & Debating Society • Ambassadors College Ile-Ife</p>
+
+    <div class="footer-links">
+      <div>
+        <strong>Quick Links</strong><br><br>
+        <a href="achievements.html">Achievements</a><br>
+        <a href="s-course.html">S-Course 2025/26</a><br>
+        <a href="articles.html">Latest Articles</a><br>
+        <a href="contact.html">Get In Touch</a>
+      </div>
+      <div>
+        <strong>Connect</strong><br><br>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
-      <div class="about-img-block" data-aos="flip-left">
-        <img src="assets/debate1.jpg" alt="Debate 1" class="about-img-float"/>
-        <img src="assets/debate2.jpg" alt="Debate 2" class="about-img-float"/>
-      </div>
-    </section>
+    </div>
 
-    <section style="max-width:900px;" data-aos="zoom-out">
-      <h2 class="section-title">Our Philosophy</h2>
-      <p style="font-size:1.1rem;text-align:center;">
-        At the heart of ACI LADS lies an unwavering pursuit of literary royalty—where articulate thought and imaginative penmanship meet character and service. We believe every voice deserves a stage and every story can ignite change. Through friendly contests, symposia, and drama, we foster a culture of courage, wit, and friendship, empowering Ambassadors who debate not only to win, but to inspire.
-      </p>
-    </section>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="scripts.js"></script>
+    <p style="margin-top: 4rem; opacity: 0.7; font-size: 0.95rem;">
+      &copy; 2026 ACI LADS • All Rights Reserved • Exclusive to Ambassadors College Students
+    </p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1200, once: false, mirror: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.style.transform = navLinks.classList.contains('active') ? 'rotate(90deg)' : 'rotate(0)';
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Active link highlighting
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === window.location.pathname.split('/').pop() || 
+          (window.location.pathname.endsWith('/') && link.getAttribute('href') === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>

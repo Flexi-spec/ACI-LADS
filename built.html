@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Rich Meta Tags -->
+  <meta name="description" content="Why we built the ACI LADS website - The story behind the official online home of the Literary and Debating Society of Ambassadors College Ile-Ife. Built by Ogunbiyi Jesutomisin, Iyiola Eniola, and Olufemi Best Praise for fellow ACI students.">
+  <meta name="keywords" content="ACI LADS, Ambassadors College Ile-Ife, why we built ACI LADS website, Ogunbiyi Jesutomisin, Iyiola Eniola, Olufemi Best Praise, debating society website, student project">
+  <meta name="author" content="Ogunbiyi Jesutomisin, Iyiola Eniola, Olufemi Best Praise">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Why We Built the ACI LADS Website">
+  <meta property="og:description" content="The story of how three ACI students — Ogunbiyi Jesutomisin, Iyiola Eniola, and Olufemi Best Praise — created this platform to empower fellow students in debating and literary excellence.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aci-lads.vercel.app/why-we-built-this.html">
+  <meta property="og:image" content="https://aci-lads.vercel.app/assets/why-we-built-og.jpg">
+  <meta property="og:site_name" content="ACI LADS">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why We Built the ACI LADS Website">
+  <meta name="twitter:description" content="Built by Ogunbiyi Jesutomisin, Iyiola Eniola & Olufemi Best Praise for every ACI student.">
+  <meta name="twitter:image" content="https://aci-lads.vercel.app/assets/why-we-built-og.jpg">
+  
+  <title>Why We Built This Website | ACI LADS - Ambassadors College Ile-Ife</title>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --navy: #0a2540;
+      --bright-gold: #f4c95d;
+      --sky: #00d4ff;
+      --light: #f8f9fa;
+      --cream: #fffdf7;
+    }
+    
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.8;
+      color: #222;
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    
+    header {
+      background: rgba(10,37,64,0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: white;
+      font-size: 2.1rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    
+    .logo img { height: 62px; filter: drop-shadow(0 6px 12px rgba(244,201,93,0.6)); }
+    
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 6px;
+    }
+    
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--bright-gold), var(--sky));
+      transition: width 0.4s;
+    }
+    
+    .nav-links a:hover:after, .nav-links a.active:after { width: 100%; }
+    .nav-links a:hover { color: var(--bright-gold); }
+    
+    .hamburger {
+      display: none;
+      font-size: 2.3rem;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .hero-why {
+      height: 75vh;
+      background: linear-gradient(135deg, rgba(10,37,64,0.85), rgba(0,212,255,0.45)),
+                  url('https://source.unsplash.com/random/1920x1080/?team,students,idea') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    
+    section { padding: 110px 6%; max-width: 1400px; margin: 0 auto; }
+    
+    h2 {
+      font-size: 3.6rem;
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    
+    h2:after {
+      content: '';
+      width: 110px;
+      height: 6px;
+      background: linear-gradient(to right, var(--bright-gold), var(--sky));
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+    
+    .story-card {
+      background: white;
+      padding: 3.5rem;
+      border-radius: 28px;
+      box-shadow: 0 20px 65px rgba(0,0,0,0.1);
+      margin-bottom: 4rem;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .team-member {
+      text-align: center;
+      background: white;
+      padding: 2.5rem 1.5rem;
+      border-radius: 24px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+    }
+    
+    footer {
+      background: linear-gradient(to bottom, var(--navy), #051627);
+      color: white;
+      padding: 6rem 6% 3rem;
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--navy);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        font-size: 1.7rem;
+        transition: left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .nav-links.active { left: 0; }
+      .hamburger { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="assets/lads-logo.png" alt="ACI LADS Logo" onerror="this.src='https://via.placeholder.com/70x70/f4c95d/0a2540?text=LADS'">
+        <span>ACI LADS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="s-course.html">S-Course</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="why-we-built-this.html" class="active">Why We Built This</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-why" data-aos="fade-down">
+    <div style="max-width:900px; padding:0 20px;">
+      <h1 style="font-size: clamp(3rem, 7vw, 5.5rem);">Why We Built This Website</h1>
+      <p style="font-size: 1.7rem; margin-top: 1.5rem;">A digital home created by ACI students, for ACI students.</p>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section data-aos="fade-up">
+    <div class="story-card">
+      <h2 style="text-align:left; margin-bottom:2rem;">Our Story</h2>
+      <p style="font-size: 1.25rem; line-height: 2;">
+        As proud students of Ambassadors College Ile-Ife, we saw a gap. While ACI LADS has produced exceptional debaters, writers, and leaders for years, there was no central digital platform where current students could easily access information, register for S-Course, read articles by fellow members, or connect with the executive council.
+      </p>
+      <p style="font-size: 1.25rem; line-height: 2; margin-top: 2rem;">
+        That changed when the three of us — <strong>Ogunbiyi Jesutomisin</strong>, <strong>Iyiola Eniola</strong>, and <strong>Olufemi Best Praise</strong> — came together with one goal: to build a modern, vibrant, and exclusive online home for ACI LADS.
+      </p>
+      <p style="font-size: 1.25rem; line-height: 2; margin-top: 2rem;">
+        This website was conceptualized, designed, and built entirely by us during our time at Ambassadors College. Every section, from the S-Course portal to the live Medium articles, was created with one thing in mind: making life easier and more exciting for every current ACI student who wants to develop their voice.
+      </p>
+    </div>
+  </section>
+
+  <!-- THE TEAM -->
+  <section style="background: var(--light);" data-aos="fade-up">
+    <h2>The Minds Behind This Platform</h2>
+    <div class="team-grid">
+      <div class="team-member" data-aos="zoom-in">
+        <h3>Ogunbiyi Jesutomisin (Flexi-Spec)</h3>
+        <p>Project Lead &amp; Visionary</p>
+        <p style="margin-top:1rem; font-size:0.95rem;">I envisioned a platform that would centralize all LADS activities and make information accessible to every ACI student.</p>
+      </div>
+      <div class="team-member" data-aos="zoom-in" data-aos-delay="150">
+        <h3>Iyiola Eniola</h3>
+        <p>Design &amp; User Experience</p>
+        <p style="margin-top:1rem; font-size:0.95rem;">I focused on creating a beautiful, intuitive interface that feels premium and welcoming to fellow students.</p>
+      </div>
+      <div class="team-member" data-aos="zoom-in" data-aos-delay="300">
+        <h3>Olufemi Best Praise</h3>
+        <p>Development &amp; Technical Lead</p>
+        <p style="margin-top:1rem; font-size:0.95rem;">I brought the vision to life through clean code, smooth animations, and full mobile responsiveness.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING MESSAGE -->
+  <section data-aos="fade-up">
+    <div style="max-width:800px; margin:0 auto; text-align:center;">
+      <h2>This Website Was Built For You</h2>
+      <p style="font-size:1.3rem; line-height:2;">
+        If you're a current student of Ambassadors College Ile-Ife and you love debating, writing, or simply want to improve your communication skills — this platform was made for you.<br><br>
+        We poured our time, creativity, and passion into this project so that future generations of ACI students can have a strong digital presence for LADS.
+      </p>
+      <div style="margin-top:3rem;">
+        <a href="contact.html" class="btn" style="background:var(--bright-gold); color:#0a2540; padding:18px 50px; border-radius:50px; text-decoration:none; font-weight:700; display:inline-block;">
+          Join the Movement
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="font-size:2.2rem; font-weight:700;">ACI LADS</p>
+    <p>Literary & Debating Society • Ambassadors College Ile-Ife</p>
+    <p style="margin-top:4rem; opacity:0.8;">© 2026 • Built with love by ACI Students for ACI Students</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1200, once: false });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '☰';
+      });
+    });
+  </script>
+</body>
+</html>

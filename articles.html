@@ -1,41 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <title>Articles | ACI LADS</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="assets/logo.png"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest articles and insights from ACI LADS members - Literary and Debating Society of Ambassadors College Ile-Ife.">
+  <title>Articles & Insights | ACI LADS - Ambassadors College Ile-Ife</title>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --navy: #0a2540;
+      --bright-gold: #f4c95d;
+      --sky: #00d4ff;
+      --light: #f8f9fa;
+      --cream: #fffdf7;
+    }
+    
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    
+    header {
+      background: rgba(10,37,64,0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: white;
+      font-size: 2.1rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    
+    .logo img { height: 62px; filter: drop-shadow(0 6px 12px rgba(244,201,93,0.6)); }
+    
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 6px;
+    }
+    
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--bright-gold), var(--sky));
+      transition: width 0.4s;
+    }
+    
+    .nav-links a:hover:after, .nav-links a.active:after { width: 100%; }
+    .nav-links a:hover { color: var(--bright-gold); }
+    
+    .hamburger {
+      display: none;
+      font-size: 2.3rem;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .hero-articles {
+      height: 70vh;
+      background: linear-gradient(135deg, rgba(10,37,64,0.85), rgba(0,212,255,0.4)),
+                  url('https://source.unsplash.com/random/1920x1080/?writing,books,library') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    section { padding: 110px 6%; max-width: 1400px; margin: 0 auto; }
+    
+    h2 {
+      font-size: 3.6rem;
+      text-align: center;
+      color: var(--navy);
+      margin-bottom: 4rem;
+    }
+    
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .article-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+      transition: all 0.4s;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-15px);
+    }
+    
+    .article-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .article-content {
+      padding: 1.8rem;
+    }
+    
+    .medium-feed {
+      margin-top: 4rem;
+      background: white;
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+    }
+    
+    footer {
+      background: linear-gradient(to bottom, var(--navy), #051627);
+      color: white;
+      padding: 6rem 6% 3rem;
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--navy);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        font-size: 1.7rem;
+        transition: left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      .nav-links.active { left: 0; }
+      .hamburger { display: block; }
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <div class="brand">
-      <img src="assets/logo.png" alt="ACI LADS" class="navbar-logo"/>
-      ACI LADS
-    </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="excos.html">Excos</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="achievements.html">Achievements</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="navbar-btn btn-glow" onclick="location.href='contact.html'">Get Involved</button>
-    <div class="hamburger" tabindex="0" aria-label="Open Menu">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-  <main>
-    <h1 class="section-title" data-aos="fade-up">The Publication</h1>
-    <section>
-      <div class="feed-grid" id="medium-feed">
-        <!-- JS will inject skeleton loaders & articles here -->
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="assets/lads-logo.png" alt="ACI LADS Logo" onerror="this.src='https://via.placeholder.com/70x70/f4c95d/0a2540?text=LADS'">
+        <span>ACI LADS</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="s-course.html">S-Course</a></li>
+        <li><a href="articles.html" class="active">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-articles" data-aos="fade-down">
+    <div style="text-align:center;">
+      <h1>Articles & Insights</h1>
+      <p style="font-size:1.7rem; margin-top:1rem;">Thoughts, opinions & literary works by ACI LADS members</p>
+      <div style="margin-top:3rem;">
+        <i class="fas fa-lock"></i> Written by and for Ambassadors College Students
       </div>
-    </section>
-  </main>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="scripts.js"></script>
+    </div>
+  </section>
+
+  <!-- LATEST ARTICLES GRID -->
+  <section data-aos="fade-up">
+    <h2>Latest from Our Members</h2>
+    <div class="articles-grid">
+      <!-- Placeholder cards - replace with real articles later -->
+      <div class="article-card" data-aos="fade-up">
+        <img src="https://source.unsplash.com/random/600x400/?debate" alt="Article">
+        <div class="article-content">
+          <h3>The Power of Logical Rebuttals</h3>
+          <p>Why strong rebuttals win debates — lessons from our last inter-house competition.</p>
+          <small style="color:#666;">By ACI LADS President • 3 days ago</small>
+        </div>
+      </div>
+      
+      <div class="article-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://source.unsplash.com/random/600x400/?writing" alt="Article">
+        <div class="article-content">
+          <h3>Why Every ACI Student Should Write</h3>
+          <p>How regular writing sharpens your thinking and boosts your confidence.</p>
+          <small style="color:#666;">By SS2 Literary Secretary • 1 week ago</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE MEDIUM FEED -->
+  <section data-aos="fade-up">
+    <h2>Live from Our Medium Page</h2>
+    <div class="medium-feed">
+      <p style="text-align:center; padding:2rem; color:#555;">Loading latest ACI LADS articles from Medium...</p>
+      <!-- Replace @your-medium-username with the actual Medium handle -->
+      <iframe src="https://medium.com/@aci-lads/latest" 
+              style="width:100%; height:650px; border:none; border-radius:16px;" 
+              title="ACI LADS Medium Articles">
+      </iframe>
+      <p style="text-align:center; margin-top:1.5rem;">
+        <a href="https://medium.com/@aci-lads" target="_blank" style="color:var(--navy); font-weight:600;">
+          Visit our full Medium publication →
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="font-size:2.2rem; font-weight:700;">ACI LADS</p>
+    <p>Literary & Debating Society • Ambassadors College Ile-Ife</p>
+    <p style="margin-top:4rem; opacity:0.8;">© 2026 • Strictly for Current ACI Students</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1100, once: false });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '☰';
+      });
+    });
+  </script>
 </body>
 </html>
